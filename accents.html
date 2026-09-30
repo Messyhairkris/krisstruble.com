@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accent Picker — Kris Struble</title>
+<meta name="description" content="My office-mate Jasper felt bad about misspelling a client’s name — there was no easy way to type the accents. That one small problem turned into two pieces of software.">
+<meta property="og:title" content="Accent Picker — Kris Struble">
+<meta property="og:image" content="https://krisstruble.com/img/owl-pellet-dissection-kit.webp">
+<meta property="og:description" content="My office-mate Jasper felt bad about misspelling a client’s name — there was no easy way to type the accents. That one small problem turned into two pieces of software.">
+<meta property="og:url" content="https://krisstruble.com/accents.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.siteReady)document.documentElement.classList.add("no-reveal")},2500)</script>
+<script type="module" src="js/site.js"></script>
+</head>
+<body class="page-accents">
+<a class="skip" href="#main">Skip to content</a>
+<header class="mobilebar">
+  <a class="name" href="index.html">Kris Struble</a>
+  <button class="index-toggle" type="button" aria-expanded="false" aria-controls="index">Index</button>
+</header>
+<aside class="index" id="index" aria-label="Site index">
+  <a class="name" href="index.html">Kris Struble</a>
+  <p class="role">Designer, scientific illustrator &amp; builder of the systems behind the work</p>
+  <nav aria-label="Chapters">
+    <ol>
+      <li><a href="kit.html"><span class="num">I</span><span class="t">The Insect Spreading Kit</span></a></li>
+      <li><a href="scans.html"><span class="num">II</span><span class="t">Field Scans</span></a></li>
+      <li><a href="classes.html"><span class="num">III</span><span class="t">Classes as a System</span></a></li>
+      <li><a href="systems.html"><span class="num">IV</span><span class="t">Systems &amp; Documentation</span></a></li>
+      <li><a href="illustration.html"><span class="num">V</span><span class="t">Scientific Illustration</span></a></li>
+      <li><a href="accents.html" aria-current="page"><span class="num">VI</span><span class="t">Accent Picker</span></a></li>
+      <li><a href="motion.html"><span class="num">VII</span><span class="t">Motion, Prototypes &amp; Sets</span></a></li>
+      <li><a href="freddi.html"><span class="num">VIII</span><span class="t">Freddi Yeti</span></a></li>
+      <li><a href="events.html"><span class="num">IX</span><span class="t">Nychos &amp; the Artist Showcase</span></a></li>
+    </ol>
+  </nav>
+  <ul class="elsewhere">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="mailto:messyhair.kris@gmail.com">Email</a></li>
+    <li><a href="https://www.linkedin.com/in/kris-struble-b930507">LinkedIn</a></li>
+    <li><a href="https://github.com/Messyhairkris">GitHub</a></li>
+    <li><a href="https://www.instagram.com/freddiyeti/">Instagram</a></li>
+  </ul>
+</aside>
+<main id="main">
+<article class="chapter chapter-accents">
+  <header class="chapter-head">
+    <div class="chapter-text">
+      <p class="chapter-num" aria-hidden="true">VI</p>
+      <p class="label">Chapter VI · Tools / Automation</p>
+      <h1>Accent Picker</h1>
+      <p class="lead">My office-mate Jasper felt bad about misspelling a client’s name — there was no easy way to type the accents. That one small problem turned into two pieces of software.</p>
+      <ul class="shows"><li>Clear writing</li><li>Technical curiosity</li><li>Tools for the team</li></ul>
+    </div>
+    <figure class="chapter-cover" data-cover="accents">
+        <img src="img/accent-picker-tool.webp" width="1800" height="1800" alt="Accent Picker app icon: a purple speckled letter ñ on a gold background">
+        <figcaption>App icon, also mine.</figcaption>
+      </figure>
+  </header>
+  <div class="chapter-body">
+<div class="split wide-left">
+  <figure>
+    <div class="screen"><img src="media/Accent_tool_in_action.gif" width="482" height="452" loading="lazy" alt="Screen recording of the Accent Picker: typing a caret before a letter opens a small menu of its accented versions, and the chosen one replaces it"></div>
+    <figcaption>The Accent Picker in use.</figcaption>
+  </figure>
+  <div class="prose">
+    <p class="label">How it works</p>
+    <div class="keys" aria-label="Type caret then e, and a menu offers é, è, ê, ë and ē">
+      <kbd>^</kbd><kbd>e</kbd><span class="arrow">→</span>
+      <span class="out"><span>é</span><span>è</span><span>ê</span><span>ë</span><span>ē</span></span>
+    </div>
+    <p>I like a challenge, and I think in automation, so I wrote an AutoHotkey tool: type a caret before a
+      letter — <span class="mono">^e</span> — and a small menu opens with every accented version of it. Pick one
+      with the keyboard and keep typing. Your hands never leave the keys.</p>
+  </div>
+</div>
+
+<div class="split wide-left">
+  <div class="prose">
+    <p class="label">The second program</p>
+    <h2>An installer creator</h2>
+    <p>It worked — but installing it was the hard part for Jasper. Homebrew software only helps if the person
+      who needs it can get it running. So I built a second program that packages a project, adds it to
+      start-up, and gives it a clean uninstall. Now anything I make can be handed to a coworker in one
+      step.</p>
+  </div>
+  <blockquote class="pull">
+    <p>The accent picker fixed one person’s problem. The installer made every tool after it shareable.</p>
+  </blockquote>
+</div>
+  </div>
+  <nav class="pager" aria-label="More chapters">
+    <a class="pager-prev" href="illustration.html"><span class="label">← Previous</span><span class="num">V</span><span class="t">Scientific Illustration</span></a>
+    <a class="pager-next" href="motion.html"><span class="label">Next →</span><span class="num">VII</span><span class="t">Motion, Prototypes &amp; Sets</span></a>
+  </nav>
+</article>
+</main>
+<footer class="foot">
+  <span>© 2026 Kris Struble. Paxton Gate products and events shown with credit to Paxton Gate, San Francisco.</span>
+</footer>
+</body>
+</html>

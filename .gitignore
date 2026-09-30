@@ -1,0 +1,19 @@
+# Build and test scaffolding: stays on this computer
+_build/
+
+# Touch Up's backups and edit history: stays on this computer
+.touchup/
+
+# Old scan viewers: stays on this computer
+scans/archive*/
+
+# Local preview config
+.claude/
+
+# OS clutter
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Resume has a phone number; send it directly instead of publishing
+resume/

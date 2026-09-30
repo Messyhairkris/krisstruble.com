@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loading…</title>
+<meta name="description" content="Gaussian-splat scans of physical specimens.">
+<link rel="stylesheet" href="viewer.css">
+<script>
+/* Opened by double-clicking? Browsers refuse to run this page's modules from a file
+   ("origin 'null' ... blocked by CORS"), so without this the page just says "Loading…"
+   forever and never shows your title. This plain script still runs, and explains. */
+if(location.protocol === 'file:') addEventListener('DOMContentLoaded', function(){
+  document.body.innerHTML =
+    '<div style="max-width:560px;margin:12vh auto;padding:0 22px;font:16px/1.6 system-ui,Segoe UI,sans-serif;color:#ece7db">' +
+    '<h1 style="font-size:22px;margin:0 0 12px">This page has to be served, not opened as a file</h1>' +
+    '<p>Browsers will not run a 3D viewer straight from your disk, so it never gets past loading.</p>' +
+    '<p><b>To preview it:</b> drag this whole folder onto <b>SplatStudio.exe</b>. It opens in your browser.</p>' +
+    '<p><b>To publish it:</b> upload the folder to your web host (Cloudflare Pages, Netlify, your own site). ' +
+    'It works there as it is.</p>' +
+    '<p style="color:#9aa0a8;font-size:14px">Nothing is wrong with the export itself.</p></div>';
+  document.body.style.background = '#0b0c0e';
+});
+</script>
+<script type="importmap">
+{ "imports": {
+  "three": "../vendor/three.module.js",
+  "three/addons/": "../vendor/three-addons/",
+  "@sparkjsdev/spark": "../vendor/spark.module.js"
+}}
+</script>
+</head>
+<body>
+
+<canvas id="stage"></canvas>
+<div id="spots" class="spot-layer"></div>
+
+<header id="bar">
+  <button id="menu-btn" class="icon" aria-label="Specimen list" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="titles">
+    <h1 id="pf-title"></h1>
+    <p id="pf-tagline" class="muted"></p>
+  </div>
+  <nav class="bar-actions">
+    <button id="tour" class="pill" aria-pressed="true">Tour</button>
+    <button id="details" class="pill" aria-pressed="false" hidden>Details</button>
+    <button id="info" class="pill" aria-pressed="false">Info</button>
+  </nav>
+</header>
+
+<aside id="menu" hidden>
+  <ol id="gallery"></ol>
+  <p class="credit muted small">Built with <a href="https://sparkjs.dev" rel="noopener">Spark</a> &amp; three.js.</p>
+</aside>
+
+<section id="panel" hidden>
+  <button id="panel-x" class="icon x" aria-label="Close">✕</button>
+  <h2 id="d-title"></h2>
+  <p id="d-desc"></p>
+  <dl id="d-facts"></dl>
+  <p id="d-credits" class="muted small"></p>
+</section>
+
+<article id="card" hidden>
+  <button id="card-x" class="icon x" aria-label="Close">✕</button>
+  <h3 id="card-title"></h3>
+  <p id="card-body"></p>
+</article>
+
+<div id="loading" class="loading"><div class="bar"><i id="loadbar"></i></div><span id="loadtext">Loading…</span></div>
+<div id="fail" class="fail" hidden></div>
+
+<script type="module" src="viewer.js"></script>
+</body>
+</html>

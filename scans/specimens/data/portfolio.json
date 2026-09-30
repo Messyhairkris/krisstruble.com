@@ -1,0 +1,383 @@
+{
+  "schema": 1,
+  "title": "Specimens",
+  "tagline": "",
+  "order": [
+    "m1790684414357",
+    "m1790709287084",
+    "m1790715527007"
+  ],
+  "models": {
+    "m1790684414357": {
+      "id": "m1790684414357",
+      "file": "Fossil horse skull.edit.clean.sh1.spz",
+      "format": "spz",
+      "title": "Fossilized Horse Skull",
+      "orient": {
+        "flip": true,
+        "rotY": 0,
+        "scale": 1,
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "cleanup": {
+        "minAlpha": 0,
+        "maxScale": "__inf__",
+        "aabb": null
+      },
+      "path": {
+        "type": "custom",
+        "center": [
+          -0.016357421875,
+          -0.015380859375,
+          0.031494140625
+        ],
+        "radius": 0.57962,
+        "height": 0.03044,
+        "samples": 48,
+        "seconds": 12,
+        "startDeg": -60,
+        "endDeg": 60,
+        "easing": "easeInOut",
+        "waypoints": [
+          {
+            "pos": [
+              0.257739476570154,
+              0.283212119591358,
+              0.6284227434659867
+            ],
+            "target": [
+              -0.03600363254340939,
+              0.019770505054590867,
+              0.08269080161883735
+            ],
+            "travel": 6,
+            "hold": 2
+          },
+          {
+            "pos": [
+              0.4337619648356127,
+              0.010514482166312481,
+              -0.024433446340236052
+            ],
+            "target": [
+              -0.018523240682935534,
+              -0.01276081111686221,
+              0.009615640579100823
+            ],
+            "travel": 7,
+            "hold": 2
+          },
+          {
+            "pos": [
+              0.2608905555002664,
+              0.0891639624021857,
+              0.27864963055039793
+            ],
+            "target": [
+              0.008190207454860403,
+              -0.017615119457585062,
+              0.09566506088972529
+            ],
+            "travel": 8,
+            "hold": 2
+          },
+          {
+            "pos": [
+              0.21757279085635792,
+              0.08565102649047837,
+              -0.4160901416617721
+            ],
+            "target": [
+              -0.050792264887434414,
+              -0.047280418771094325,
+              0.06514220978955958
+            ],
+            "travel": 7,
+            "hold": 2
+          },
+          {
+            "pos": [
+              -0.28095406921429267,
+              0.16153099179553515,
+              -0.4115672651000236
+            ],
+            "target": [
+              0.05621201455627162,
+              -0.06733155364014866,
+              -0.017592499894690142
+            ],
+            "travel": 6,
+            "hold": 2
+          },
+          {
+            "pos": [
+              -0.498143772492514,
+              -0.15988353925935928,
+              0.055884977542548876
+            ],
+            "target": [
+              0.05621201455627237,
+              -0.06733155364014898,
+              -0.017592499894691034
+            ],
+            "travel": 5,
+            "hold": 2
+          },
+          {
+            "pos": [
+              -0.35641075266346434,
+              0.3008425338555006,
+              0.6040809077541757
+            ],
+            "target": [
+              -0.03600363254340939,
+              0.019770505054590867,
+              0.08269080161883735
+            ],
+            "travel": 4,
+            "hold": 2
+          },
+          {
+            "pos": [
+              -0.3564107526634362,
+              0.30084253385552223,
+              0.6040809077541818
+            ],
+            "target": [
+              -0.03600363254340939,
+              0.019770505054590867,
+              0.08269080161883735
+            ],
+            "travel": 5,
+            "hold": 2
+          },
+          {
+            "pos": [
+              0.257739476570154,
+              0.283212119591358,
+              0.6284227434659867
+            ],
+            "target": [
+              -0.03600363254340939,
+              0.019770505054590867,
+              0.08269080161883735
+            ],
+            "travel": 5,
+            "hold": 0
+          }
+        ]
+      },
+      "hotspots": [],
+      "docs": {
+        "auto": {
+          "format": "spz",
+          "bytes": 1230039,
+          "splats": 74807,
+          "extent": [
+            0.197,
+            0.132,
+            0.525
+          ]
+        },
+        "description": "This Equus sp. skull is believed to be at least 30,000 years old. All modern horses evolve from this ancestor. ",
+        "credits": "Scanned object, Scaniverse + Custom software, All rights reserved Kris Struble"
+      },
+      "publish": {
+        "format": "spz",
+        "sh": 1,
+        "bytes": 1230039,
+        "file": "Fossil horse skull.edit.clean.sh1.spz"
+      }
+    },
+    "m1790709287084": {
+      "id": "m1790709287084",
+      "file": "Jackalope.edit.spz",
+      "format": "spz",
+      "title": "Jackalope Head Mount",
+      "orient": {
+        "flip": true,
+        "rotY": 0.9,
+        "scale": 1,
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "cleanup": {
+        "minAlpha": 0,
+        "maxScale": "__inf__",
+        "aabb": null
+      },
+      "path": {
+        "type": "pingpong",
+        "center": [
+          -0.005026028125763395,
+          -0.0093994140625,
+          -0.03559386234347043
+        ],
+        "radius": 0.44186,
+        "height": -0.04688,
+        "samples": 48,
+        "seconds": 19,
+        "startDeg": 8,
+        "endDeg": 85,
+        "easing": "easeInOutSine"
+      },
+      "hotspots": [],
+      "docs": {
+        "auto": {
+          "format": "spz",
+          "bytes": 659590,
+          "splats": 40434,
+          "extent": [
+            0.266,
+            0.5,
+            0.158
+          ]
+        },
+        "description": "I grew up in the Midwest where old-timers would carry on the tradition of lying to children and travelers about the things they have seen.  Jackalopes were an early lesson not to believe every thing you hear. They along with other crypids act as inspiration for creative projects.",
+        "credits": "Digital Scan, Scaniverse + Custom Software, Kris Struble"
+      },
+      "publish": {
+        "format": "spz",
+        "sh": 1,
+        "bytes": 659590,
+        "file": "Jackalope.edit.spz"
+      },
+      "edits": {
+        "removed": 185,
+        "of": 40619
+      }
+    },
+    "m1790715527007": {
+      "id": "m1790715527007",
+      "file": "Valencia Corridor.clean.spz",
+      "format": "spz",
+      "title": "Conjoined Goat Taxidermy",
+      "orient": {
+        "flip": true,
+        "rotY": 0,
+        "scale": 1,
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "cleanup": {
+        "minAlpha": 0.26,
+        "maxScale": "__inf__",
+        "aabb": null
+      },
+      "path": {
+        "type": "revolve",
+        "center": [
+          0.0286865234375,
+          0.0169677734375,
+          0.0152587890625
+        ],
+        "radius": 0.80787,
+        "height": 0.27086,
+        "samples": 48,
+        "seconds": 20,
+        "startDeg": -60,
+        "endDeg": 60,
+        "easing": "linear",
+        "waypoints": [
+          {
+            "pos": [
+              0.055782441050083766,
+              0.5700370771188131,
+              0.3475728339739461
+            ],
+            "target": [
+              -0.003169045124696662,
+              0.0011582485605289067,
+              0.04018410800376447
+            ],
+            "travel": 2,
+            "hold": 5.6
+          },
+          {
+            "pos": [
+              0.2348513728168393,
+              0.5183314954810235,
+              0.6067835059089539
+            ],
+            "target": [
+              0.007918453070741094,
+              0.03448952617841198,
+              0.024094351466567687
+            ],
+            "travel": 2,
+            "hold": 0
+          },
+          {
+            "pos": [
+              0.6409819383300506,
+              0.10451139638516929,
+              0.3538783432907335
+            ],
+            "target": [
+              0.014249601479770923,
+              0.002300709578952408,
+              0.022025447808491003
+            ],
+            "travel": 2,
+            "hold": 0
+          },
+          {
+            "pos": [
+              0.42851088702030565,
+              0.4404256009655272,
+              0.8217357286951321
+            ],
+            "target": [
+              0.02940354449329678,
+              0.024851459954857186,
+              0.050404463526382136
+            ],
+            "travel": 2,
+            "hold": 0
+          }
+        ]
+      },
+      "hotspots": [],
+      "docs": {
+        "auto": {
+          "format": "spz",
+          "bytes": 942730,
+          "splats": 57703,
+          "extent": [
+            0.218,
+            0.523,
+            0.192
+          ]
+        },
+        "description": "Unique specimens like this conjoined goat are perfect subjects for digitization. ",
+        "credits": "Scanned item, Scaniverse = Custom Software, All rights reserved"
+      },
+      "publish": {
+        "format": "spz",
+        "sh": 1,
+        "bytes": 942730,
+        "file": "Valencia Corridor.clean.spz"
+      },
+      "edits": {
+        "removed": 13,
+        "of": 68003
+      }
+    }
+  },
+  "theme": "specimen",
+  "markers": {
+    "reveal": "afterFirst",
+    "showNumbers": true,
+    "color": "#7ea8a0"
+  }
+}

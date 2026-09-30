@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field Scans — Kris Struble</title>
+<meta name="description" content="Specimens captured on a regular iPhone 13 Pro, cleaned up and published with a tool I built for the job. Drag to look around — the tour picks back up when you let go.">
+<meta property="og:title" content="Field Scans — Kris Struble">
+<meta property="og:image" content="https://krisstruble.com/img/owl-pellet-dissection-kit.webp">
+<meta property="og:description" content="Specimens captured on a regular iPhone 13 Pro, cleaned up and published with a tool I built for the job. Drag to look around — the tour picks back up when you let go.">
+<meta property="og:url" content="https://krisstruble.com/scans.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.siteReady)document.documentElement.classList.add("no-reveal")},2500)</script>
+<script type="module" src="js/site.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
+</head>
+<body class="page-scans">
+<a class="skip" href="#main">Skip to content</a>
+<header class="mobilebar">
+  <a class="name" href="index.html">Kris Struble</a>
+  <button class="index-toggle" type="button" aria-expanded="false" aria-controls="index">Index</button>
+</header>
+<aside class="index" id="index" aria-label="Site index">
+  <a class="name" href="index.html">Kris Struble</a>
+  <p class="role">Designer, scientific illustrator &amp; builder of the systems behind the work</p>
+  <nav aria-label="Chapters">
+    <ol>
+      <li><a href="kit.html"><span class="num">I</span><span class="t">The Insect Spreading Kit</span></a></li>
+      <li><a href="scans.html" aria-current="page"><span class="num">II</span><span class="t">Field Scans</span></a></li>
+      <li><a href="classes.html"><span class="num">III</span><span class="t">Classes as a System</span></a></li>
+      <li><a href="systems.html"><span class="num">IV</span><span class="t">Systems &amp; Documentation</span></a></li>
+      <li><a href="illustration.html"><span class="num">V</span><span class="t">Scientific Illustration</span></a></li>
+      <li><a href="accents.html"><span class="num">VI</span><span class="t">Accent Picker</span></a></li>
+      <li><a href="motion.html"><span class="num">VII</span><span class="t">Motion, Prototypes &amp; Sets</span></a></li>
+      <li><a href="freddi.html"><span class="num">VIII</span><span class="t">Freddi Yeti</span></a></li>
+      <li><a href="events.html"><span class="num">IX</span><span class="t">Nychos &amp; the Artist Showcase</span></a></li>
+    </ol>
+  </nav>
+  <ul class="elsewhere">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="mailto:messyhair.kris@gmail.com">Email</a></li>
+    <li><a href="https://www.linkedin.com/in/kris-struble-b930507">LinkedIn</a></li>
+    <li><a href="https://github.com/Messyhairkris">GitHub</a></li>
+    <li><a href="https://www.instagram.com/freddiyeti/">Instagram</a></li>
+  </ul>
+</aside>
+<main id="main">
+<article class="chapter chapter-scans">
+  <header class="chapter-head no-cover">
+    <div class="chapter-text">
+      <p class="chapter-num" aria-hidden="true">II</p>
+      <p class="label">Chapter II · Creative Technology / Software</p>
+      <h1>Field Scans</h1>
+      <p class="lead">Specimens captured on a regular iPhone 13 Pro, cleaned up and published with a tool I built for the job. Drag to look around — the tour picks back up when you let go.</p>
+      <ul class="shows"><li>3D capture</li><li>Built with AI</li><li>Web performance</li></ul>
+    </div>
+    
+  </header>
+  <div class="chapter-body">
+<div class="embed" data-cover="scans"
+     data-embed-src="scans/specimens/viewer/"
+     data-embed-title="Field Scans"
+     data-embed-bytes="7823283"
+     data-embed-frame-title="Interactive 3D gaussian-splat scans of natural history specimens">
+  <img class="embed-poster" src="img/field-scans-poster.webp" width="1600" height="910" alt="A still from the 3D scan viewer">
+  <button class="embed-cover" type="button" hidden>
+    <span class="embed-icon" aria-hidden="true"></span>
+    <span class="embed-label">Load Field Scans</span>
+    <span class="embed-note">Drag to look around once it’s loaded · ☰ switches specimens</span>
+  </button>
+  <noscript><a class="embed-fallback" href="scans/specimens/viewer/">Open the 3D scans ↗</a></noscript>
+</div>
+<p class="embed-foot"><a href="scans/specimens/viewer/" target="_blank" rel="noopener">Open full screen ↗</a></p>
+
+<div class="stats">
+  <div><b>27.7 → 1.2 MB</b><span>fossil horse skull, raw capture to published file</span></div>
+  <div><b>~20×</b><span>smaller across all three scans, with little visible loss</span></div>
+  <div><b>0</b><span>uploads — it runs entirely in the browser</span></div>
+</div>
+
+<div class="split">
+  <div class="prose">
+    <h2>Why I built a tool</h2>
+    <p>Most people don’t know a phone can do this. The hard part is the step between the phone and a
+      web page: raw captures are 10–33 MB each, full of floating specks and glowing haze, and every fix
+      meant opening another program.</p>
+    <p>So I built <b>Splat Portfolio</b> with Claude Code: one browser app that cleans a scan, shrinks
+      it for the web, sets a camera tour, adds notes, and exports a site ready for GitHub Pages. It’s
+      the viewer you’re using above.</p>
+  </div>
+  <div class="prose">
+    <h2>Where the megabytes are</h2>
+    <p>Along the way I found out where the megabytes actually are: 73% of a raw file is color detail
+      that changes with viewing angle. Deleting floaters barely helps; re-encoding does. I wrote that
+      finding into the tool, so it explains itself to the next person.</p>
+  </div>
+</div>
+
+<figure class="wide-figure">
+  <model-viewer src="models/orange-cake.glb" alt="3D scan of a decorated orange cake" camera-controls disable-zoom auto-rotate touch-action="pan-y" loading="lazy" reveal="auto" shadow-intensity="0.6" exposure="1.05"></model-viewer>
+  <figcaption><b>Orange cake</b> — a phone capture exported as a textured mesh instead of splats. Drag to turn it.</figcaption>
+</figure>
+  </div>
+  <nav class="pager" aria-label="More chapters">
+    <a class="pager-prev" href="kit.html"><span class="label">← Previous</span><span class="num">I</span><span class="t">The Insect Spreading Kit</span></a>
+    <a class="pager-next" href="classes.html"><span class="label">Next →</span><span class="num">III</span><span class="t">Classes as a System</span></a>
+  </nav>
+</article>
+</main>
+<footer class="foot">
+  <span>© 2026 Kris Struble. Paxton Gate products and events shown with credit to Paxton Gate, San Francisco.</span>
+</footer>
+</body>
+</html>

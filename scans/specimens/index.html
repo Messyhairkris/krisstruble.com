@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Specimens</title>
+<link rel="canonical" href="viewer/">
+<style>body{margin:0;background:#0b0c0e;color:#ece7db;font:16px/1.6 system-ui,Segoe UI,sans-serif}
+main{max-width:560px;margin:12vh auto;padding:0 22px}a{color:#7ea8a0}.muted{color:#9aa0a8;font-size:14px}</style>
+<main id="m"><p>Loading Specimens… <a href="viewer/">continue</a>.</p></main>
+<script>
+if(location.protocol === 'file:'){
+  document.getElementById('m').innerHTML =
+    '<h1 style="font-size:22px;margin:0 0 12px">This site has to be served, not opened as a file</h1>' +
+    '<p>Browsers will not run a 3D viewer straight from your disk.</p>' +
+    '<p><b>To preview it:</b> drag this whole folder onto <b>SplatStudio.exe</b>. It opens in your browser.</p>' +
+    '<p><b>To publish it:</b> upload the folder to your web host (Cloudflare Pages, Netlify, your own site). It works there as it is.</p>' +
+    '<p class="muted">Nothing is wrong with the export itself.</p>';
+} else {
+  location.replace('viewer/');
+}
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=viewer/"></noscript>
