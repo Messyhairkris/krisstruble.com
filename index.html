@@ -14,9 +14,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=20261002b">
+<link rel="stylesheet" href="css/site.css?v=20261002c">
 <script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.siteReady)document.documentElement.classList.add("no-reveal")},2500)</script>
-<script type="module" src="js/site.js?v=20261002b"></script>
+<script type="module" src="js/site.js?v=20261002c"></script>
 </head>
 <body class="page-home">
 <a class="skip" href="#main">Skip to content</a>
@@ -61,8 +61,30 @@
       instructions.</p>
   </div>
   <figure class="intro-figure">
-    <img src="img/bestorb-weaver-nephila-maculata.webp" width="1208" height="1800" alt="Ink and color illustration of a golden orb-weaver spider, Nephila maculata">
-    <figcaption><i>Nephila maculata</i> — digital ink &amp; color</figcaption>
+    <img alt="">
+    <figcaption></figcaption>
+    <noscript><img src="img/bestorb-weaver-nephila-maculata.webp" width="1208" height="1800" alt="Ink and color illustration of a golden orb-weaver spider, Nephila maculata"></noscript>
+    <script>
+    /* The drawing at the top is a different one each visit. It is chosen here, before the page
+       is drawn, so nothing flashes; it never changes while the page is being read. */
+    (function () {
+      var pool = [["img/bestorb-weaver-nephila-maculata.webp","Ink and color illustration of a golden orb-weaver spider, Nephila maculata","<i>Nephila maculata</i> — digital ink &amp; color"],["img/sphingidae.webp","Ink and color illustration of a hawk moth, family Sphingidae","<i>Sphingidae</i> — digital ink &amp; color"],["img/color-styx-deaths-head.webp","Ink and color illustration of a death’s-head hawk moth, Acherontia styx","<i>Acherontia styx</i> — digital ink &amp; color"],["img/color-chrysiridia-rhipheus-sunset-moth.webp","Ink and color illustration of a Madagascan sunset moth","<i>Chrysiridia rhipheus</i> — digital ink &amp; color"],["img/emerald-swallowtail-color.webp","Ink and color illustration of an emerald swallowtail butterfly","Emerald swallowtail — digital ink &amp; color"],["img/eupatorus-gracilicornis5-horn-beetle-male-color.webp","Ink and color illustration of a five-horned rhinoceros beetle with wings open","<i>Eupatorus gracilicornis</i> — digital ink &amp; color"],["img/color-prosopocoilus-astacoides-red-stag-beetle-female.webp","Ink and color illustration of a female red stag beetle","<i>Prosopocoilus astacoides</i> — digital ink &amp; color"],["img/color-tonkin-s-longhorn-beetle-diastocera-wallichi-toninensis-male.webp","Ink and color illustration of a Tonkin’s longhorn beetle","<i>Diastocera wallichii tonkinensis</i> — digital ink &amp; color"],["img/mantiscolor.webp","Ink and color illustration of a flower mantis","Flower mantis — digital ink &amp; color"]];
+      var fig = document.currentScript.parentNode;
+      var img = fig.querySelector("img");
+      var cap = fig.querySelector("figcaption");
+      window.pickHero = function () {
+        var last = -1;
+        try { last = Number(sessionStorage.getItem("pool:intro") || -1); } catch (e) {}
+        var i = Math.floor(Math.random() * pool.length);
+        if (i === last) i = (i + 1) % pool.length;
+        try { sessionStorage.setItem("pool:intro", String(i)); } catch (e) {}
+        img.src = pool[i][0];
+        img.alt = pool[i][1];
+        cap.innerHTML = pool[i][2];
+      };
+      window.pickHero();
+    })();
+    </script>
   </figure>
 </section>
 

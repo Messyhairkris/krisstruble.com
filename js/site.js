@@ -21,21 +21,27 @@ addEventListener("keydown", (e) => {
 
 // ── A picture that is different each visit: <img data-pool="a.webp|b.webp|…"> ──
 // One is chosen when the page opens and it stays put while the page is being read. Coming
-// back to the page chooses again, never the same one twice in a row.
+// back to the page chooses again, never the same one twice in a row, and never the drawing
+// that is already showing at the top of the home page (index.html chooses that one itself).
 function pickFromPool(img) {
-  const pool = img.dataset.pool.split("|");
+  const showing = document.querySelector(".intro-figure img")?.getAttribute("src");
+  const pool = img.dataset.pool.split("|").filter((src) => src !== showing);
   const key = "pool:" + (img.dataset.cover || pool[0]);
-  let last = -1;
-  try { last = Number(sessionStorage.getItem(key) ?? -1); } catch {}
+  let last = "";
+  try { last = sessionStorage.getItem(key) || ""; } catch {}
   let i = Math.floor(Math.random() * pool.length);
-  if (pool.length > 1 && i === last) i = (i + 1) % pool.length;
-  try { sessionStorage.setItem(key, String(i)); } catch {}
+  if (pool.length > 1 && pool[i] === last) i = (i + 1) % pool.length;
+  try { sessionStorage.setItem(key, pool[i]); } catch {}
   img.src = pool[i];
 }
 const pooled = [...document.querySelectorAll("img[data-pool]")];
 pooled.forEach(pickFromPool);
 // "Back" can bring the page back exactly as it was left; that still counts as a return.
-addEventListener("pageshow", (e) => { if (e.persisted) pooled.forEach(pickFromPool); });
+addEventListener("pageshow", (e) => {
+  if (!e.persisted) return;
+  window.pickHero?.();
+  pooled.forEach(pickFromPool);
+});
 
 // ── Drift-in (the CSS lists the same elements, so they start hidden) ───────
 const REVEAL = [
