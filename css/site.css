@@ -139,10 +139,13 @@ main{max-width:calc(var(--index-w) + 1240px);min-height:100vh}
 
 /* a cover that changes: pictures stacked in one frame, one showing at a time */
 .carousel-stage{position:relative;aspect-ratio:1;max-height:70vh;margin-inline:auto}
-.carousel .slide{position:absolute;inset:0;display:grid;place-items:center;opacity:0;visibility:hidden;
-  transition:opacity 1.2s var(--ease),visibility 0s 1.2s}
+.carousel .slide{position:absolute;inset:0;opacity:0;visibility:hidden;
+  transition:opacity 2.6s ease-in-out,visibility 0s 2.6s}
 .carousel .slide.is-on{opacity:1;visibility:visible;transition-delay:0s}
-.carousel .slide img{width:100%;height:100%;max-height:none;object-fit:contain}
+/* --fit sizes one picture inside the frame: below 1 to give it room, above 1 to fill out a
+   drawing that has a lot of empty margin in its file */
+.carousel .slide img,.carousel button[data-full]:hover img{position:absolute;inset:0;width:100%;height:100%;max-height:none;
+  object-fit:contain;transform:scale(var(--fit,1))}
 .carousel figcaption{min-height:3em;text-align:center;margin-inline:auto}
 .carousel-controls{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:6px}
 .carousel-controls[hidden]{display:none}
@@ -273,10 +276,24 @@ video.portrait{max-height:72vh;width:auto;max-width:100%;background:#000;border-
 
 /* lightbox */
 .lightbox{position:fixed;inset:0;z-index:60;background:rgba(var(--shadow),.94);display:grid;place-items:center;padding:4vmin;animation:fade .3s var(--ease)}
-.lightbox figure{max-width:min(1100px,92vw);text-align:center}
-.lightbox img{max-height:80vh;width:auto;margin:auto;animation:rise .45s var(--ease)}
+.lightbox:focus{outline:0}
+.lightbox figure{max-width:min(1100px,84vw);text-align:center}
+.lightbox img{max-height:80vh;width:auto;margin:auto;cursor:default}
+.lightbox img.is-in{animation:rise .45s var(--ease)}
 .lightbox p{color:#f0e1d5;font:400 15px/1.5 var(--sans)}
-.lightbox button{position:absolute;top:16px;right:18px;font:500 14px/1 var(--sans);color:#fff;background:none;border:1px solid rgba(255,255,255,.5);padding:9px 13px;border-radius:2px;cursor:pointer}
+.lightbox button{position:absolute;font:500 14px/1 var(--sans);color:#fff;background:none;border:1px solid rgba(255,255,255,.5);padding:9px 13px;border-radius:2px;cursor:pointer}
+.lightbox button:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.lightbox button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.lb-close{top:16px;right:18px}
+.lb-prev,.lb-next{top:50%;transform:translateY(-50%);font-size:22px !important;padding:14px 16px !important}
+.lb-prev{left:18px}
+.lb-next{right:18px}
+.lb-count{display:block;margin-top:2px;font:400 12px/1.4 var(--sans);letter-spacing:.1em;color:rgba(255,255,255,.6)}
+.lightbox{cursor:zoom-out}
+/* With a mouse, clicking off the picture closes it, so the Close button stays out of sight
+   until the keyboard reaches it. Touch screens always show it. */
+@media (hover:hover) and (pointer:fine){.lb-close{opacity:0}.lb-close:focus-visible{opacity:1}}
+@media (max-width:600px){.lb-prev,.lb-next{top:auto;bottom:16px;transform:none}}
 
 /* pager */
 .pager{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:28px 0 64px;border-top:1px solid var(--rule)}

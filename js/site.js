@@ -135,42 +135,91 @@ function setupCarousel(fig) {
 document.querySelectorAll(".carousel").forEach(setupCarousel);
 
 // ── Lightbox for any picture wrapped in <button data-full> ─────────────────
+// Opens the picture large, and from there every enlargeable picture on the page can be
+// stepped through (arrow keys or the side buttons). Click anywhere off the picture to close.
 let box = null;
 let lastFocus = null;
+const captionOf = (b) => (b.dataset.cap
+  ? b.dataset.cap.replace(/<[^>]+>/g, "")
+  : b.closest("figure")?.querySelector("figcaption")?.textContent || "").replace(/\s+/g, " ").trim();
+// Every picture once, in page order. A rotating cover repeats pictures from further down the
+// page, so its own copies only count when the picture appears nowhere else.
+function galleryFor(clicked) {
+  const all = [...document.querySelectorAll("button[data-full]")];
+  const inBody = all.filter((b) => !b.closest(".carousel"));
+  const known = new Set(inBody.map((b) => b.dataset.full));
+  const coverOnly = all.filter((b) => b.closest(".carousel") && !known.has(b.dataset.full));
+  const list = [...coverOnly, ...inBody].filter((b, i, a) => a.findIndex((o) => o.dataset.full === b.dataset.full) === i);
+  return { list, at: Math.max(0, list.findIndex((b) => b.dataset.full === clicked.dataset.full)) };
+}
 function closeBox() {
   if (!box) return;
   box.remove();
   box = null;
   document.body.style.overflow = "";
-  lastFocus?.focus();
+  lastFocus?.focus({ preventScroll: true });
 }
-function openBox(src, caption) {
-  lastFocus = document.activeElement;
+function openBox(clicked) {
+  const { list, at: first } = galleryFor(clicked);
+  let at = first;
+  lastFocus = clicked;
   box = document.createElement("div");
   box.className = "lightbox";
+  box.tabIndex = -1;
   box.setAttribute("role", "dialog");
   box.setAttribute("aria-modal", "true");
-  box.setAttribute("aria-label", caption || "Picture");
   const fig = document.createElement("figure");
   const img = document.createElement("img");
-  img.src = src;
-  img.alt = caption || "";
   const p = document.createElement("p");
-  p.textContent = caption || "";
-  const x = document.createElement("button");
-  x.type = "button";
-  x.textContent = "Close ✕";
-  x.onclick = closeBox;
-  fig.append(img, p);
+  const count = document.createElement("span");
+  count.className = "lb-count";
+  const button = (cls, text, label, fn) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = cls;
+    b.textContent = text;
+    b.setAttribute("aria-label", label);
+    b.onclick = fn;
+    return b;
+  };
+  const show = (i) => {
+    at = (i + list.length) % list.length;
+    const caption = captionOf(list[at]);
+    img.classList.remove("is-in");
+    img.src = list[at].dataset.full;
+    img.alt = caption;
+    void img.offsetWidth;
+    img.classList.add("is-in");
+    p.textContent = caption;
+    count.textContent = list.length > 1 ? `${at + 1} / ${list.length}` : "";
+    box.setAttribute("aria-label", caption || "Picture");
+    if (list.length > 1) new Image().src = list[(at + 1) % list.length].dataset.full;
+  };
+  const x = button("lb-close", "Close ✕", "Close", closeBox);
+  const prev = button("lb-prev", "←", "Previous picture", () => show(at - 1));
+  const next = button("lb-next", "→", "Next picture", () => show(at + 1));
+  fig.append(img, p, count);
   box.append(x, fig);
-  box.addEventListener("click", (e) => { if (e.target === box) closeBox(); });
+  if (list.length > 1) box.append(prev, next);
+  box.addEventListener("click", (e) => { if (!e.target.closest("img,button")) closeBox(); });
+  box.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); show(at + 1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); show(at - 1); }
+    else if (e.key === "Tab") {
+      // keep the keyboard inside the lightbox
+      const stops = [...box.querySelectorAll("button")];
+      const i = stops.indexOf(document.activeElement);
+      e.preventDefault();
+      stops[(i + (e.shiftKey ? -1 : 1) + stops.length) % stops.length].focus();
+    }
+  });
   document.body.append(box);
   document.body.style.overflow = "hidden";
-  x.focus();
+  show(at);
+  box.focus();
 }
 document.addEventListener("click", (e) => {
   const b = e.target.closest("button[data-full]");
-  if (!b) return;
-  openBox(b.dataset.full, b.closest("figure")?.querySelector("figcaption")?.textContent.trim());
+  if (b) openBox(b);
 });
 addEventListener("keydown", (e) => { if (e.key === "Escape") closeBox(); });
