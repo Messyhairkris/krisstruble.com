@@ -88,6 +88,52 @@ if (reduced) {
   });
 }
 
+// ── A cover that changes: <figure class="carousel" data-interval="10000"> ──
+// Each .slide is a picture; one shows at a time. It waits while the pointer or keyboard is on
+// it, while the page is hidden, and for people who ask for less motion it does not move at all.
+function setupCarousel(fig) {
+  const slides = [...fig.querySelectorAll(".slide")];
+  const dots = [...fig.querySelectorAll(".dot")];
+  const caption = fig.querySelector("figcaption");
+  const controls = fig.querySelector(".carousel-controls");
+  const pause = fig.querySelector(".carousel-pause");
+  const every = Number(fig.dataset.interval) || 10000;
+  let at = 0;
+  let stopped = reduced;
+  let held = false;
+  const show = (i) => {
+    at = (i + slides.length) % slides.length;
+    slides.forEach((s, n) => {
+      const on = n === at;
+      s.classList.toggle("is-on", on);
+      s.tabIndex = on ? 0 : -1;
+      s.setAttribute("aria-hidden", String(!on));
+      const img = s.querySelector("img");
+      if (on || n === (at + 1) % slides.length) img.loading = "eager";
+    });
+    dots.forEach((d, n) => n === at ? d.setAttribute("aria-current", "true") : d.removeAttribute("aria-current"));
+    caption.innerHTML = slides[at].dataset.cap;
+  };
+  const label = () => {
+    pause.textContent = stopped ? "Play" : "Pause";
+    pause.setAttribute("aria-pressed", String(stopped));
+  };
+  dots.forEach((d, n) => d.addEventListener("click", () => show(n)));
+  pause.addEventListener("click", () => { stopped = !stopped; label(); });
+  fig.addEventListener("pointerenter", () => { held = true; });
+  fig.addEventListener("pointerleave", () => { held = false; });
+  fig.addEventListener("focusin", () => { held = true; });
+  fig.addEventListener("focusout", () => { held = false; });
+  setInterval(() => {
+    if (stopped || held || document.hidden || box) return;
+    show(at + 1);
+  }, every);
+  controls.hidden = false;
+  label();
+  show(0);
+}
+document.querySelectorAll(".carousel").forEach(setupCarousel);
+
 // ── Lightbox for any picture wrapped in <button data-full> ─────────────────
 let box = null;
 let lastFocus = null;

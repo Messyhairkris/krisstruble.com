@@ -58,10 +58,24 @@
       <p class="lead">I drew every species taught in Paxton Gate’s pinning classes: accurate enough to teach from, good enough to wear. Some went onto shirts, stickers and temporary tattoos.</p>
       <ul class="shows"><li>Visual craft</li><li>Scientific accuracy</li></ul>
     </div>
-    <figure class="chapter-cover" data-cover="illustration">
-        <img src="img/morpho-color.webp" alt="Blue morpho butterfly, wings spread, in digital ink and color">
-        <figcaption>Blue morpho — digital ink &amp; color</figcaption>
-      </figure>
+    <figure class="chapter-cover carousel" data-cover="illustration" data-interval="10000" aria-roledescription="carousel" aria-label="Selected illustrations">
+      <div class="carousel-stage">
+        <button type="button" class="slide is-on" data-full="img/sphingidae.webp" data-cap="&lt;i&gt;Sphingidae&lt;/i&gt; — hawk moth"><img src="img/sphingidae.webp" alt="Hawk moth, family Sphingidae"></button>
+        <button type="button" class="slide" data-full="img/color-chrysiridia-rhipheus-sunset-moth.webp" data-cap="&lt;i&gt;Chrysiridia rhipheus&lt;/i&gt; — Madagascan sunset moth" tabindex="-1" aria-hidden="true"><img src="img/color-chrysiridia-rhipheus-sunset-moth.webp" loading="lazy" alt="Madagascan sunset moth"></button>
+        <button type="button" class="slide" data-full="img/color-tonkin-s-longhorn-beetle-diastocera-wallichi-toninensis-male.webp" data-cap="&lt;i&gt;Diastocera wallichii tonkinensis&lt;/i&gt; — Tonkin’s longhorn beetle ♂" tabindex="-1" aria-hidden="true"><img src="img/color-tonkin-s-longhorn-beetle-diastocera-wallichi-toninensis-male.webp" loading="lazy" alt="Tonkin's longhorn beetle, male"></button>
+        <button type="button" class="slide" data-full="img/color-prosopocoilus-astacoides-red-stag-beetle-female.webp" data-cap="&lt;i&gt;Prosopocoilus astacoides&lt;/i&gt; — red stag beetle ♀" tabindex="-1" aria-hidden="true"><img src="img/color-prosopocoilus-astacoides-red-stag-beetle-female.webp" loading="lazy" alt="Red stag beetle, female"></button>
+        <button type="button" class="slide" data-full="img/mantiscolor.webp" data-cap="Flower mantis" tabindex="-1" aria-hidden="true"><img src="img/mantiscolor.webp" loading="lazy" alt="Flower mantis"></button>
+      </div>
+      <figcaption><i>Sphingidae</i> — hawk moth</figcaption>
+      <div class="carousel-controls" hidden>
+        <button type="button" class="dot" aria-current="true" aria-label="Show Hawk moth, family Sphingidae"></button>
+        <button type="button" class="dot" aria-label="Show Madagascan sunset moth"></button>
+        <button type="button" class="dot" aria-label="Show Tonkin's longhorn beetle, male"></button>
+        <button type="button" class="dot" aria-label="Show Red stag beetle, female"></button>
+        <button type="button" class="dot" aria-label="Show Flower mantis"></button>
+        <button type="button" class="carousel-pause" aria-pressed="false">Pause</button>
+      </div>
+    </figure>
   </header>
   <div class="chapter-body">
 <p class="note">Press any drawing to see it large.</p>
@@ -118,8 +132,6 @@
     <figcaption>…♀</figcaption></figure>
   <figure><button type="button" data-full="img/dorcusgrey.webp"><img src="img/dorcusgrey.webp" loading="lazy" alt="Stag beetle drawn in grays"></button>
     <figcaption><i>Dorcus</i> stag beetle, in gray</figcaption></figure>
-  <figure><button type="button" data-full="img/colored-beetle.webp"><img src="img/colored-beetle.webp" loading="lazy" alt="Stag beetle with wings open"></button>
-    <figcaption>Stag beetle, wings open</figcaption></figure>
 </div>
 
 <h2 class="group-title">And the others</h2>
