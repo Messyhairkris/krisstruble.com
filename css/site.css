@@ -124,6 +124,9 @@ main{max-width:calc(var(--index-w) + 1240px);min-height:100vh}
 .chapter-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);
   align-items:center;padding:clamp(40px,8vh,96px) 0 clamp(40px,7vh,80px);border-bottom:1px solid var(--rule)}
 .chapter-head.no-cover{grid-template-columns:1fr}
+/* Field Scans: the viewer is the cover, so it gets the wider column */
+.chapter-scans .chapter-head{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+@media (max-width:760px){.chapter-scans .chapter-head{grid-template-columns:1fr}}
 .chapter-num{font:italic 300 clamp(88px,13vw,180px)/.8 var(--serif);color:color-mix(in srgb,var(--stone) 40%,var(--paper));
   margin:0 0 .12em;letter-spacing:-.03em}
 .chapter-head h1{font-weight:400;font-size:clamp(40px,5.2vw,76px);line-height:1;letter-spacing:-.02em;margin:.25em 0 .4em}

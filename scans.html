@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Field Scans — Kris Struble</title>
-<meta name="description" content="Specimens captured on a regular iPhone 13 Pro, cleaned up and published with a tool I built for the job. Drag to look around — the tour picks back up when you let go.">
+<meta name="description" content="From replacement parts to digital exhibits: 3D scans captured on an iPhone, then cleaned up, shrunk and published with a browser tool I built.">
 <meta property="og:title" content="Field Scans — Kris Struble">
 <meta property="og:image" content="https://krisstruble.com/img/owl-pellet-dissection-kit.webp">
-<meta property="og:description" content="Specimens captured on a regular iPhone 13 Pro, cleaned up and published with a tool I built for the job. Drag to look around — the tour picks back up when you let go.">
+<meta property="og:description" content="From replacement parts to digital exhibits: 3D scans captured on an iPhone, then cleaned up, shrunk and published with a browser tool I built.">
 <meta property="og:url" content="https://krisstruble.com/scans.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -51,60 +51,106 @@
 </aside>
 <main id="main">
 <article class="chapter chapter-scans">
-  <header class="chapter-head no-cover">
+  <header class="chapter-head">
     <div class="chapter-text">
       <p class="chapter-num" aria-hidden="true">II</p>
       <p class="label">Chapter II · Creative Technology / Software</p>
       <h1>Field Scans</h1>
-      <p class="lead">Specimens captured on a regular iPhone 13 Pro, cleaned up and published with a tool I built for the job. Drag to look around — the tour picks back up when you let go.</p>
+      <p class="lead">From replacement parts to digital exhibits.</p>
+      <p>My interest in 3D scanning started while I was running Near Future. I was looking for better ways to repair damaged objects.</p>
       <ul class="shows"><li>3D capture</li><li>Built with AI</li><li>Web performance</li></ul>
     </div>
-    
+    <div class="chapter-cover">
+      <div class="embed" data-cover="scans"
+           data-embed-src="scans/specimens/viewer/"
+           data-embed-title="Field Scans"
+           data-embed-bytes="7823283"
+           data-embed-frame-title="Interactive 3D gaussian-splat scans of natural history specimens">
+        <img class="embed-poster" src="img/field-scans-poster.webp" width="1600" height="910" alt="A still from the 3D scan viewer">
+        <button class="embed-cover" type="button" hidden>
+          <span class="embed-icon" aria-hidden="true"></span>
+          <span class="embed-label">Load Field Scans</span>
+          <span class="embed-note">Drag to look around once it’s loaded · ☰ switches specimens</span>
+        </button>
+        <noscript><a class="embed-fallback" href="scans/specimens/viewer/">Open the 3D scans ↗</a></noscript>
+      </div>
+      <p class="embed-foot"><a href="scans/specimens/viewer/" target="_blank" rel="noopener">Open full screen ↗</a></p>
+    </div>
   </header>
   <div class="chapter-body">
-<div class="embed" data-cover="scans"
-     data-embed-src="scans/specimens/viewer/"
-     data-embed-title="Field Scans"
-     data-embed-bytes="7823283"
-     data-embed-frame-title="Interactive 3D gaussian-splat scans of natural history specimens">
-  <img class="embed-poster" src="img/field-scans-poster.webp" width="1600" height="910" alt="A still from the 3D scan viewer">
-  <button class="embed-cover" type="button" hidden>
-    <span class="embed-icon" aria-hidden="true"></span>
-    <span class="embed-label">Load Field Scans</span>
-    <span class="embed-note">Drag to look around once it’s loaded · ☰ switches specimens</span>
-  </button>
-  <noscript><a class="embed-fallback" href="scans/specimens/viewer/">Open the 3D scans ↗</a></noscript>
-</div>
-<p class="embed-foot"><a href="scans/specimens/viewer/" target="_blank" rel="noopener">Open full screen ↗</a></p>
-
 <div class="stats">
   <div><b>27.7 → 1.2 MB</b><span>fossil horse skull, raw capture to published file</span></div>
   <div><b>~20×</b><span>smaller across all three scans, with little visible loss</span></div>
   <div><b>0</b><span>uploads — it runs entirely in the browser</span></div>
 </div>
 
-<div class="split">
-  <div class="prose">
-    <h2>Why I built a tool</h2>
-    <p>Most people don’t know a phone can do this. The hard part is the step between the phone and a
-      web page: raw captures are 10–33 MB each, full of floating specks and glowing haze, and every fix
-      meant opening another program.</p>
-    <p>So I built <b>Splat Portfolio</b> with Claude Code: one browser app that cleans a scan, shrinks
-      it for the web, sets a camera tour, adds notes, and exports a site ready for GitHub Pages. It’s
-      the viewer you’re using above.</p>
-  </div>
-  <div class="prose">
-    <h2>Where the megabytes are</h2>
-    <p>Along the way I found out where the megabytes actually are: 73% of a raw file is color detail
-      that changes with viewing angle. Deleting floaters barely helps; re-encoding does. I wrote that
-      finding into the tool, so it explains itself to the next person.</p>
-  </div>
+<div class="prose">
+  <p>One of the things I demonstrated was how to take a photograph of a damaged or missing part, bring it
+    into Fusion 360, establish the correct scale, and use it as a reference for designing a replacement
+    part. It worked surprisingly well, but I kept thinking about what would happen if the reference itself
+    could be captured in 3D.</p>
+  <p>I experimented with photogrammetry, then with a hacked Kinect and Skanect. The results were not
+    accurate or useful enough for the repairs I had in mind, but the idea stuck.</p>
+  <p>Years later, phones had become remarkably good at capturing 3D objects. The technology had finally
+    reached the point where I could make attractive captures with something as ordinary as an iPhone.</p>
+  <p>But there was a catch.</p>
+</div>
+
+<div class="prose">
+  <h2>A scan is not necessarily a model</h2>
+  <p>The newer capture methods I have been working with, particularly Gaussian splats, are excellent for
+    capturing the appearance of an object. They are not solid models, though, and they cannot simply be
+    brought into a CAD program and used to build a replacement part.</p>
+  <p>For the original repair problem, that makes a splat more useful as a proportional visual reference
+    than as something I can directly design from.</p>
+  <p>That limitation pushed my interest in a different direction: <b>if I could not easily turn these
+    captures into useful CAD geometry, what else could I do with them?</b></p>
+</div>
+
+<div class="prose">
+  <h2>Making scans people can actually explore</h2>
+  <p>That question led to <b>Splat Portfolio</b>, a browser-based tool I built to make captured objects
+    easier to clean up, publish, and explore.</p>
+  <p>The raw captures were surprisingly large and often contained floating specks, haze, and other
+    artifacts. I wanted a way to take a capture, prepare it for the web, and give someone a simple way to
+    look around it without installing specialized software.</p>
+  <p>I built the tool with Claude Code, using Three.js, Spark, and related libraries. I iterated on the
+    workflow and viewer until it could handle the practical parts of publishing a scan: cleaning it up,
+    reducing its size, setting up a camera tour, adding notes, and producing a web-ready result.</p>
+  <p>The technical details are part of the fun. A raw fossil horse skull capture, for example, went from
+    27.7 MB to 1.2 MB with little visible loss. Across the three scans, the published files are roughly 20
+    times smaller. The entire viewer runs in the browser.</p>
 </div>
 
 <figure class="wide-figure">
   <model-viewer src="models/orange-cake.glb" alt="3D scan of a decorated orange cake" camera-controls disable-zoom auto-rotate touch-action="pan-y" loading="lazy" reveal="auto" shadow-intensity="0.6" exposure="1.05"></model-viewer>
-  <figcaption><b>Orange cake</b> — a phone capture exported as a textured mesh instead of splats. Drag to turn it.</figcaption>
+  <figcaption><b>Orange cake</b> — a phone capture exported as a textured mesh instead of splats. Drag to turn it.
+    Pastry by <a href="https://www.craftsman-wolves.com/">Craftsman and Wolves</a>.</figcaption>
 </figure>
+
+<div class="prose">
+  <h2>What I want to do with it</h2>
+  <p>This is where the project became more interesting to me than the original repair problem.</p>
+  <p>A physical object exists in one place. A digital capture can be shared with people who could never
+    visit it, handle it, or even know that it exists.</p>
+  <p>I can see this being useful for digital museum exhibits, documenting events, recording places at a
+    particular moment, or creating an archive of objects and experiences that might otherwise
+    disappear.</p>
+  <p>The scan does not have to replace the original. It can give people another way to encounter it.</p>
+</div>
+
+<div class="prose">
+  <h2>Still experimenting</h2>
+  <p>The project started with a practical question about repairing physical objects and ended up somewhere
+    I did not expect.</p>
+  <p>I am still interested in the original problem. A good 3D model that could provide accurate geometry
+    for CAD would be incredibly useful. But until capture technology gets there, I have found another
+    reason to keep scanning: <b>making physical things available to people who cannot be there to see
+    them.</b></p>
+  <p>That makes Field Scans an ongoing experiment in both capture and presentation, and a chance to explore
+    what becomes possible when ordinary devices can record increasingly rich versions of the physical
+    world.</p>
+</div>
   </div>
   <nav class="pager" aria-label="More chapters">
     <a class="pager-prev" href="kit.html"><span class="label">← Previous</span><span class="num">I</span><span class="t">The Insect Spreading Kit</span></a>
