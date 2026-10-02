@@ -16,7 +16,7 @@ export const CHAPTERS = [
     n: 3,
     slug: "classes",
     title: "Classes as a System",
-    tag: "Service & Learning Design",
+    tag: "Education & Program Design",
   },
   {
     n: 4,
