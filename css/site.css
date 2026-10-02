@@ -181,6 +181,9 @@ figcaption b{color:var(--ink);font-weight:500}
 .timeline li{counter-increment:step;padding:16px 18px 18px 0;border-right:1px solid var(--rule)}
 .timeline li::before{content:counter(step,decimal-leading-zero);display:block;font:500 11px/1 var(--mono);color:var(--accent);margin-bottom:10px}
 .timeline b{display:block;font:500 17px/1.25 var(--serif)}
+.timeline li.key span{color:var(--ink)}
+.timeline li.key b{color:var(--accent)}
+.group-note{max-width:var(--measure);margin:-8px 0 20px}
 .timeline span{display:block;font:400 14px/1.45 var(--sans);color:var(--stone);margin-top:4px}
 
 .specimens .item{padding:18px 0;border-bottom:1px solid var(--rule)}
