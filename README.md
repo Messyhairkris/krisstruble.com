@@ -9,7 +9,7 @@ I treat problem solving as creative work. I learn unfamiliar things by throwing 
 ## What that has looked like
 
 - **A product, start to shelf.** I designed, illustrated, costed and produced Paxton Gate's Insect Spreading Kit. The second version cut the packaging cost roughly in half, and the savings paid for a second specimen so beginners could practice two techniques.
-- **A program, rebuilt.** I relaunched a dormant workshop program and ran it at about 46 workshops a year, with the illustrations, info sheets and teaching materials that made each class repeatable by other instructors.
+- **A program, rebuilt.** I relaunched a dormant workshop program and ran it at 46 workshops a year, with the illustrations, info sheets and teaching materials that made each class repeatable by other instructors.
 - **A job, written down.** As Fulfillment Coordinator I wrote the department's operating procedure so a trained associate could run the role without me.
 - **A tool, when none existed.** I built a browser app that cleans and shrinks iPhone 3D scans for the web: a fossil horse skull went from 27.7 MB to 1.2 MB with little visible loss.
 - **A small problem, taken seriously.** A coworker couldn't type a client's name correctly, so I wrote an accent picker, then an installer so people who aren't technical could actually use it.
