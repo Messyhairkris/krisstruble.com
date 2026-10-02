@@ -108,6 +108,8 @@ main{max-width:calc(var(--index-w) + 1240px);min-height:100vh}
 .tile-title{font:500 20px/1.2 var(--serif);align-self:end}
 .tile-tag{font:500 11px/1.4 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--stone)}
 .tile:hover .tile-img img{transform:scale(1.035)}
+/* a drawing shown whole in its tile, rather than cropped to fill it */
+.tile-img img.whole{object-fit:contain;padding:9%}
 .tile:hover .tile-title{color:var(--accent)}
 @media (max-width:600px){.tiles{grid-template-columns:1fr 1fr;gap:32px 14px}.tile{column-gap:8px}.tile-num{font-size:28px}.tile-title{font-size:16px}.tile-tag{display:none}}
 

@@ -19,6 +19,24 @@ addEventListener("keydown", (e) => {
   if (e.key === "Escape" && index.classList.contains("open")) toggle.click();
 });
 
+// ── A picture that is different each visit: <img data-pool="a.webp|b.webp|…"> ──
+// One is chosen when the page opens and it stays put while the page is being read. Coming
+// back to the page chooses again, never the same one twice in a row.
+function pickFromPool(img) {
+  const pool = img.dataset.pool.split("|");
+  const key = "pool:" + (img.dataset.cover || pool[0]);
+  let last = -1;
+  try { last = Number(sessionStorage.getItem(key) ?? -1); } catch {}
+  let i = Math.floor(Math.random() * pool.length);
+  if (pool.length > 1 && i === last) i = (i + 1) % pool.length;
+  try { sessionStorage.setItem(key, String(i)); } catch {}
+  img.src = pool[i];
+}
+const pooled = [...document.querySelectorAll("img[data-pool]")];
+pooled.forEach(pickFromPool);
+// "Back" can bring the page back exactly as it was left; that still counts as a return.
+addEventListener("pageshow", (e) => { if (e.persisted) pooled.forEach(pickFromPool); });
+
 // ── Drift-in (the CSS lists the same elements, so they start hidden) ───────
 const REVEAL = [
   ".intro>*", ".tiles>li", ".about>*", ".chapter-head>.chapter-text", ".chapter-body>:not([data-cover])",
