@@ -140,7 +140,7 @@ main{max-width:calc(var(--index-w) + 1240px);min-height:100vh}
 @media (max-width:760px){.chapter-head{grid-template-columns:1fr}.chapter-cover{order:-1}}
 
 /* a cover that changes: pictures stacked in one frame, one showing at a time */
-.carousel-stage{position:relative;aspect-ratio:1;max-height:70vh;margin-inline:auto}
+.carousel-stage{position:relative;aspect-ratio:var(--stage,1);max-height:70vh;margin-inline:auto}
 .carousel .slide{position:absolute;inset:0;opacity:0;visibility:hidden;
   transition:opacity 2.6s ease-in-out,visibility 0s 2.6s}
 .carousel .slide.is-on{opacity:1;visibility:visible;transition-delay:0s}
@@ -193,6 +193,11 @@ figcaption b{color:var(--ink);font-weight:500}
    product shot uncropped on a card */
 .grid.even img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .grid.even img.whole{object-fit:contain;background:var(--card)}
+.grid.even img.cutout{object-fit:contain;background:none}
+/* a small picture beside its text */
+.split.narrow-left{grid-template-columns:minmax(160px,.32fr) minmax(0,1fr);align-items:center}
+.split.narrow-left>figure{max-width:280px}
+@media (max-width:760px){.split.narrow-left{grid-template-columns:1fr}}
 .grid figcaption{font-size:13px}
 .wide-figure video,.wide-figure img{width:100%;max-height:78vh;object-fit:contain;border-radius:2px;background:#000}
 @media (max-width:760px){.split,.split.wide-left,.grid.g2,.grid.g3{grid-template-columns:1fr}.grid.g4,.grid.g5{grid-template-columns:1fr 1fr}}

@@ -17,9 +17,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=20261003a">
+<link rel="stylesheet" href="css/site.css?v=20261003b">
 <script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.siteReady)document.documentElement.classList.add("no-reveal")},2500)</script>
-<script type="module" src="js/site.js?v=20261003a"></script>
+<script type="module" src="js/site.js?v=20261003b"></script>
 </head>
 <body class="page-events">
 <a class="skip" href="#main">Skip to content</a>
@@ -104,32 +104,42 @@
 </figure>
 
 <h2 class="section-title">The Artist Showcase</h2>
-<p class="note">I designed a poster for each day.</p>
-<div class="grid g5">
-  <figure><button type="button" data-full="img/showcase-poster-1.webp"><img src="img/showcase-poster-1.webp" loading="lazy" alt="Artist Showcase poster: Nychos, graffiti artist and muralist, and Zac Amendolia, tattoo flash and toy design"></button>
-    <figcaption>Day 1 · Nychos &amp; Zac Amendolia</figcaption></figure>
-  <figure><button type="button" data-full="img/showcase-poster-2.webp"><img src="img/showcase-poster-2.webp" loading="lazy" alt="Artist Showcase poster: Nychos and E Dyer, paintings of city nightscapes and cosmic wonders"></button>
-    <figcaption>Day 2 · Nychos &amp; E Dyer</figcaption></figure>
-  <figure><button type="button" data-full="img/showcase-poster-3.webp"><img src="img/showcase-poster-3.webp" loading="lazy" alt="Artist Showcase poster: Nigel Sussman, complex isometric illustrations"></button>
-    <figcaption>Day 3 · Nigel Sussman</figcaption></figure>
-  <figure><button type="button" data-full="img/showcase-poster-4.webp"><img src="img/showcase-poster-4.webp" loading="lazy" alt="Artist Showcase poster: Michael McConnell, narrative animal art"></button>
-    <figcaption>Day 4 · Michael McConnell</figcaption></figure>
-  <figure><button type="button" data-full="img/showcase-poster-5.webp"><img src="img/showcase-poster-5.webp" loading="lazy" alt="Artist Showcase poster: Zachary Sweet, painting and augmented reality"></button>
-    <figcaption>Day 5 · Zachary Sweet</figcaption></figure>
+<div class="split narrow-left">
+  <figure class="carousel" data-interval="5000" style="--stage:.645" aria-roledescription="carousel" aria-label="Artist Showcase posters">
+    <div class="carousel-stage">
+      <button type="button" class="slide is-on" data-full="img/showcase-poster-1.webp" data-cap="Day 1 · Nychos &amp;amp; Zac Amendolia"><img src="img/showcase-poster-1.webp" alt="Artist Showcase poster: Nychos, graffiti artist and muralist, and Zac Amendolia, tattoo flash and toy design"></button>
+      <button type="button" class="slide" data-full="img/showcase-poster-2.webp" data-cap="Day 2 · Nychos &amp;amp; E Dyer" tabindex="-1" aria-hidden="true"><img src="img/showcase-poster-2.webp" loading="lazy" alt="Artist Showcase poster: Nychos and E Dyer, paintings of city nightscapes and cosmic wonders"></button>
+      <button type="button" class="slide" data-full="img/showcase-poster-3.webp" data-cap="Day 3 · Nigel Sussman" tabindex="-1" aria-hidden="true"><img src="img/showcase-poster-3.webp" loading="lazy" alt="Artist Showcase poster: Nigel Sussman, complex isometric illustrations"></button>
+      <button type="button" class="slide" data-full="img/showcase-poster-4.webp" data-cap="Day 4 · Michael McConnell" tabindex="-1" aria-hidden="true"><img src="img/showcase-poster-4.webp" loading="lazy" alt="Artist Showcase poster: Michael McConnell, narrative animal art"></button>
+      <button type="button" class="slide" data-full="img/showcase-poster-5.webp" data-cap="Day 5 · Zachary Sweet" tabindex="-1" aria-hidden="true"><img src="img/showcase-poster-5.webp" loading="lazy" alt="Artist Showcase poster: Zachary Sweet, painting and augmented reality"></button>
+    </div>
+    <figcaption>Day 1 · Nychos &amp; Zac Amendolia</figcaption>
+    <div class="carousel-controls" hidden>
+      <button type="button" class="dot" aria-label="Show Day 1 · Nychos and Zac Amendolia"></button>
+      <button type="button" class="dot" aria-label="Show Day 2 · Nychos and E Dyer"></button>
+      <button type="button" class="dot" aria-label="Show Day 3 · Nigel Sussman"></button>
+      <button type="button" class="dot" aria-label="Show Day 4 · Michael McConnell"></button>
+      <button type="button" class="dot" aria-label="Show Day 5 · Zachary Sweet"></button>
+      <button type="button" class="carousel-pause" aria-pressed="false">Pause</button>
+    </div>
+  </figure>
+  <div class="prose">
+    <p class="note">I designed a poster for each day.</p>
+  </div>
 </div>
 <div class="grid g3 even">
   <figure><button type="button" data-full="img/showcase-e-dyer.webp"><img src="img/showcase-e-dyer.webp" loading="lazy" alt="E Dyer painting at an easel in the Paxton Gate window, in silhouette"></button>
     <figcaption>E Dyer, painting in the window.</figcaption></figure>
   <figure><button type="button" data-full="img/showcase-zac-window.webp"><img src="img/showcase-zac-window.webp" loading="lazy" alt="Paxton Gate's front windows filled with Zac Amendolia's Greasy Creeps toys and a wall of tattoo flash"></button>
-    <figcaption>Zac Amendolia’s window: toys and tattoo flash.</figcaption></figure>
+    <figcaption>Zac Amendolia’s window: his handmade Greasy Creeps toys and tattoo flash.</figcaption></figure>
   <figure><button type="button" data-full="img/showcase-passersby.webp"><img src="img/showcase-passersby.webp" loading="lazy" alt="Two people on the sidewalk looking closely at the toys in the Paxton Gate window"></button>
     <figcaption>Passers-by stopping at the window.</figcaption></figure>
   <figure><button type="button" data-full="img/showcase-zachary-sweet.webp"><img src="img/showcase-zachary-sweet.webp" loading="lazy" alt="Zachary Sweet in silhouette at the window, with people watching from inside the shop"></button>
-    <figcaption>Zachary Sweet at work, with an audience.</figcaption></figure>
-  <figure><button type="button" data-full="img/showcase-nigel-terrarium.webp"><img class="whole" src="img/showcase-nigel-terrarium.webp" loading="lazy" alt="Nigel Sussman's illustration of a glass terrarium jar holding a skull, crystals, plants and insects"></button>
-    <figcaption>Nigel Sussman’s piece, inspired by Paxton Gate.</figcaption></figure>
-  <figure><button type="button" data-full="img/showcase-mcconnell-people.webp"><img src="img/showcase-mcconnell-people.webp" loading="lazy" alt="Two watercolor portraits by Michael McConnell of Paxton Gate staff, one with an animal head"></button>
-    <figcaption>Michael McConnell painted the Paxton Gate staff.</figcaption></figure>
+    <figcaption>Zachary Sweet, painter and muralist, at work with an audience.</figcaption></figure>
+  <figure><button type="button" data-full="img/showcase-nigel-terrarium.webp"><img class="cutout" src="img/showcase-nigel-terrarium.webp" loading="lazy" alt="Nigel Sussman's illustration of a glass terrarium jar holding a skull, crystals, plants and insects"></button>
+    <figcaption>Nigel Sussman, known for his detailed isometric illustrations, made this piece inspired by Paxton Gate.</figcaption></figure>
+  <figure><button type="button" data-full="img/showcase-mcconnell-people.webp"><img src="img/showcase-mcconnell-people.webp" loading="lazy" alt="Two watercolor figures by Michael McConnell based on Paxton Gate staff, one with a raccoon's head"></button>
+    <figcaption>Michael McConnell paints narrative work with animal-headed figures. In the window, the Paxton Gate staff became his subjects.</figcaption></figure>
 </div>
 
 <div class="split">
@@ -181,12 +191,12 @@
     <figcaption>Meeting a python.</figcaption></figure>
   <figure><button type="button" data-full="img/creep-meet.webp"><img src="img/creep-meet.webp" loading="lazy" alt="A handler passing a ball python to a smiling visitor"></button>
     <figcaption>Up close with a handler.</figcaption></figure>
-  <figure><button type="button" data-full="img/creep-crowd.webp"><img src="img/creep-crowd.webp" loading="lazy" alt="A crowd gathered around a handler holding a snake in the plant room"></button>
-    <figcaption>The crowd around the handler.</figcaption></figure>
-  <figure><button type="button" data-full="img/herp-happy-hour.webp"><img src="img/herp-happy-hour.webp" loading="lazy" alt="A man with a snake draped over his shoulders at a crowded evening patio event"></button>
-    <figcaption>Herpetology Happy Hour with Mission Science Workshop.</figcaption></figure>
   <figure><button type="button" data-full="img/live-music-poster.webp"><img class="whole" src="img/live-music-poster.webp" loading="lazy" alt="Poster: Performing live at Paxton Gate, Divya Raghavan and Roo Harrigan, Thursday August 14th"></button>
     <figcaption>Valencia Live! music night: the poster I designed.</figcaption></figure>
+  <figure><button type="button" data-full="img/herp-happy-hour.webp"><img src="img/herp-happy-hour.webp" loading="lazy" alt="A man with a snake draped over his shoulders at a crowded evening patio event"></button>
+    <figcaption>Herpetology Happy Hour with Mission Science Workshop.</figcaption></figure>
+  <figure><button type="button" data-full="img/herp-happy-hour-2.webp"><img src="img/herp-happy-hour-2.webp" loading="lazy" alt="A smiling participant holding a corn snake at a crowded evening event"></button>
+    <figcaption>Getting close to the reptiles.</figcaption></figure>
   </div>
 </div>
 
