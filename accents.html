@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Accent Picker — Kris Struble</title>
-<meta name="description" content="My office-mate Jasper felt bad about misspelling a client’s name — there was no easy way to type the accents. That one small problem turned into two pieces of software.">
+<meta name="description" content="My office-mate Jasper needed to type a new employee’s name correctly, but there was no convenient way to enter the accents. We found a workaround, but it was awkward enough that I started wondering if I could make a better one.">
 <meta property="og:title" content="Accent Picker — Kris Struble">
 <meta property="og:image" content="https://krisstruble.com/img/owl-pellet-dissection-kit.webp">
-<meta property="og:description" content="My office-mate Jasper felt bad about misspelling a client’s name — there was no easy way to type the accents. That one small problem turned into two pieces of software.">
+<meta property="og:description" content="My office-mate Jasper needed to type a new employee’s name correctly, but there was no convenient way to enter the accents. We found a workaround, but it was awkward enough that I started wondering if I could make a better one.">
 <meta property="og:url" content="https://krisstruble.com/accents.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -55,7 +55,8 @@
       <p class="chapter-num" aria-hidden="true">VI</p>
       <p class="label">Chapter VI · Tools / Automation</p>
       <h1>Accent Picker</h1>
-      <p class="lead">My office-mate Jasper felt bad about misspelling a client’s name — there was no easy way to type the accents. That one small problem turned into two pieces of software.</p>
+      <p class="lead">My office-mate Jasper needed to type a new employee’s name correctly, but there was no convenient way to enter the accents. We found a workaround, but it was awkward enough that I started wondering if I could make a better one.</p>
+      <p>I built it in AutoHotkey, a Windows automation tool I have used for years to make small tasks run more smoothly.</p>
       <ul class="shows"><li>Clear writing</li><li>Technical curiosity</li><li>Tools for the team</li></ul>
     </div>
     <figure class="chapter-cover" data-cover="accents">
@@ -70,29 +71,49 @@
     <figcaption>The Accent Picker in use.</figcaption>
   </figure>
   <div class="prose">
-    <p class="label">How it works</p>
-    <div class="keys" aria-label="Type caret then e, and a menu offers é, è, ê, ë and ē">
+    <h2>The Accent Picker</h2>
+    <p>The finished tool uses a caret as a shortcut. Type <span class="mono">^</span> followed by a letter, such
+      as <span class="mono">^e</span>, and a small window appears with the available diacritics:</p>
+    <div class="keys" aria-label="Type caret then e, and a window offers é, è, ê, ë and ē">
       <kbd>^</kbd><kbd>e</kbd><span class="arrow">→</span>
       <span class="out"><span>é</span><span>è</span><span>ê</span><span>ë</span><span>ē</span></span>
     </div>
-    <p>I like a challenge, and I think in automation, so I wrote an AutoHotkey tool: type a caret before a
-      letter — <span class="mono">^e</span> — and a small menu opens with every accented version of it. Pick one
-      with the keyboard and keep typing. Your hands never leave the keys.</p>
+    <p>You can move through the choices with the keyboard or select one with the button, and then continue
+      typing normally.</p>
+    <p>Getting that simple interaction to work meant solving a few less-visible problems too. The picker
+      needed to respond only to the intended letters, appear near the cursor, and open on the correct screen
+      when working across multiple monitors.</p>
+    <p>I compiled the AutoHotkey script into an executable and made an icon so Jasper could install it
+      without needing AutoHotkey or the source code.</p>
   </div>
 </div>
 
-<div class="split wide-left">
+<div class="split">
   <div class="prose">
-    <p class="label">The second program</p>
-    <h2>An installer creator</h2>
-    <p>It worked — but installing it was the hard part for Jasper. Homebrew software only helps if the person
-      who needs it can get it running. So I built a second program that packages a project, adds it to
-      start-up, and gives it a clean uninstall. Now anything I make can be handed to a coworker in one
-      step.</p>
+    <h2>Then I found the next problem</h2>
+    <p>When I showed Jasper the finished program on my computer, I realized that simply giving him the
+      executable wasn’t enough. The tool needed to start automatically when Windows started, and I didn’t
+      want him to have to figure out where to put files or how to configure it.</p>
+    <p>So I continued to prototype and made a second program.</p>
   </div>
-  <blockquote class="pull">
-    <p>The accent picker fixed one person’s problem. The installer made every tool after it shareable.</p>
-  </blockquote>
+  <div class="prose">
+    <h2>The Installer Creator</h2>
+    <p>The installer takes a project folder and sets it up for the user: program files go where they belong,
+      the application is added to the Windows startup folder, and shortcuts are created on the desktop and
+      Start menu.</p>
+    <p>It also generates an uninstaller that removes what the installer added.</p>
+    <p>That turned a tool I had built for one coworker into something I could actually hand to someone else
+      and expect them to use.</p>
+  </div>
+</div>
+
+<div class="prose">
+  <h2>Why AutoHotkey</h2>
+  <p>AutoHotkey is particularly useful to me for this kind of work because it speaks Windows natively and
+    lets me prototype an idea quickly. The finished programs are not trying to compete with polished
+    commercial software. They are functional tools built to solve a specific problem.</p>
+  <p>For me, that is often the important part: get the idea working, use it, find the next problem, and
+    improve the tool.</p>
 </div>
   </div>
   <nav class="pager" aria-label="More chapters">
