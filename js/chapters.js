@@ -40,7 +40,7 @@ export const CHAPTERS = [
     n: 7,
     slug: "motion",
     title: "Motion, Prototypes & Sets",
-    tag: "3D / Interaction / Prototyping",
+    tag: "Motion / Interaction / Prototyping",
   },
   {
     n: 8,
