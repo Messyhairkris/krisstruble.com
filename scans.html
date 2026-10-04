@@ -17,9 +17,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=20261003d">
+<link rel="stylesheet" href="css/site.css?v=20261004a">
 <script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.siteReady)document.documentElement.classList.add("no-reveal")},2500)</script>
-<script type="module" src="js/site.js?v=20261003d"></script>
+<script type="module" src="js/site.js?v=20261004a"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
 </head>
 <body class="page-scans">
@@ -68,6 +68,7 @@
            data-embed-src="scans/specimens/viewer/"
            data-embed-title="Field Scans"
            data-embed-bytes="7823283"
+           data-embed-load="visible"
            data-embed-frame-title="Interactive 3D gaussian-splat scans of natural history specimens">
         <img class="embed-poster" src="img/field-scans-poster.webp" width="1600" height="910" alt="A still from the 3D scan viewer">
         <button class="embed-cover" type="button" hidden>
@@ -77,6 +78,9 @@
         </button>
         <noscript><a class="embed-fallback" href="scans/specimens/viewer/">Open the 3D scans ↗</a></noscript>
       </div>
+      <p class="embed-help"><b>It’s interactive.</b> Drag to turn a scan, scroll or pinch to zoom, right-drag or use two
+        fingers to move it. <b>☰</b> picks a specimen and <b>Info</b> shows notes about it. The camera tour picks
+        back up a few seconds after you let go.</p>
       <p class="embed-foot"><a href="scans/specimens/viewer/" target="_blank" rel="noopener">Open full screen ↗</a></p>
     </div>
   </header>

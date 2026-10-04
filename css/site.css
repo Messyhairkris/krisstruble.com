@@ -355,6 +355,8 @@ model-viewer{width:100%;height:min(70vh,560px);background:var(--card);border-rad
 .embed[data-state="failed"] .embed-icon::before{content:"↻";border:0;margin:0;font:400 30px/1 var(--sans);color:var(--embed-ink);width:auto;height:auto}
 .embed-fallback{position:absolute;inset:0;display:grid;place-items:center;color:var(--embed-ink);font:500 18px/1 var(--sans)}
 .embed-foot{margin-top:10px !important;font:500 13px/1 var(--sans);text-align:right}
+.embed-help{margin:12px 0 0;font:400 13px/1.5 var(--sans);color:var(--stone)}
+.embed-help b{color:var(--ink);font-weight:600}
 @keyframes spin{to{transform:rotate(1turn)}}
 
 /* ── motion ────────────────────────────────────────────────────────── */
