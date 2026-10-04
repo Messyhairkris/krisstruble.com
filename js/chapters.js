@@ -52,7 +52,7 @@ export const CHAPTERS = [
     n: 9,
     slug: "events",
     title: "Nychos & the Artist Showcase",
-    tag: "Production / Collaboration",
+    tag: "Event Production / Collaboration",
   },
 ];
 
