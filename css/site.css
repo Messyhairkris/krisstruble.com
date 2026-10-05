@@ -279,6 +279,18 @@ button[data-full]:hover img{transform:scale(1.03)}
 .compare .label{display:block;margin-bottom:8px}
 .compare h3{font:400 clamp(24px,2.4vw,32px)/1.1 var(--serif);margin:0 0 .4em}
 @media (max-width:760px){.compare{grid-template-columns:1fr}.compare>div+div{padding-left:0;border-left:0;border-top:1px solid var(--rule)}}
+/* compare with a photo under each side; on phones each photo follows its own text */
+.compare.with-figs{grid-template-rows:auto auto;grid-auto-flow:column}
+.compare.with-figs>figure{margin:0;padding:6px 28px 22px 0}
+.compare.with-figs>.col2{padding-left:28px;padding-right:0;border-left:1px solid var(--rule)}
+.compare.with-figs img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.compare.with-figs img.whole{object-fit:contain;background:var(--card)}
+@media (max-width:760px){
+  .compare.with-figs{grid-auto-flow:row;grid-template-rows:none}
+  .compare.with-figs>.col2{padding-left:0;border-left:0}
+  .compare.with-figs>figure{padding-right:0}
+  .compare.with-figs>div.col2{border-top:1px solid var(--rule)}
+}
 
 /* a checked list of what was produced */
 .checks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 28px}

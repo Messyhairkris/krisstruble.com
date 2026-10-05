@@ -17,9 +17,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=20261005c">
+<link rel="stylesheet" href="css/site.css?v=20261005e">
 <script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.siteReady)document.documentElement.classList.add("no-reveal")},2500)</script>
-<script type="module" src="js/site.js?v=20261005c"></script>
+<script type="module" src="js/site.js?v=20261005e"></script>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="688c40be-6018-49d1-bb95-970aa23d5b86" data-domains="krisstruble.com"></script>
 </head>
 <body class="page-kit">
@@ -84,13 +84,16 @@
   <p>So I looked for a way to keep the visual impact without spending the budget on the container.</p>
 </div>
 
-<div class="compare">
+<!-- each version's photo sits with its text: side by side on wide screens, text then photo on phones -->
+<div class="compare with-figs">
   <div>
     <span class="label">Version 1</span>
     <h3>A clear acrylic box</h3>
     <p>The tools were part of the display.</p>
   </div>
-  <div>
+  <figure><button type="button" data-full="img/kit-v1-acrylic.webp"><img src="img/kit-v1-acrylic.webp" loading="lazy" alt="Version 1 of the Insect Spreading Kit: clear acrylic boxes with a kraft wraparound label"></button>
+    <figcaption><b>Version 1</b>, in clear acrylic with a wraparound label.</figcaption></figure>
+  <div class="col2">
     <span class="label">Version 2</span>
     <h3>Printed packaging, and more to learn</h3>
     <p>Custom printed packaging at about half the cost, easier to handle, and sturdier on the shelf.</p>
@@ -98,11 +101,7 @@
       the opportunity to practice both spreading techniques instead of getting only one chance to
       learn.</p>
   </div>
-</div>
-<div class="grid g2 even">
-  <figure><button type="button" data-full="img/kit-v1-acrylic.webp"><img src="img/kit-v1-acrylic.webp" loading="lazy" alt="Version 1 of the Insect Spreading Kit: clear acrylic boxes with a kraft wraparound label"></button>
-    <figcaption><b>Version 1</b>, in clear acrylic with a wraparound label.</figcaption></figure>
-  <figure><button type="button" data-full="img/kit-v2-angle.webp"><img class="whole" src="img/kit-v2-angle.webp" loading="lazy" alt="Version 2 of the Insect Spreading Kit: a printed box with a kraft label panel and green sides patterned with illustrated insects"></button>
+  <figure class="col2"><button type="button" data-full="img/kit-v2-angle.webp"><img class="whole" src="img/kit-v2-angle.webp" loading="lazy" alt="Version 2 of the Insect Spreading Kit: a printed box with a kraft label panel and green sides patterned with illustrated insects"></button>
     <figcaption><b>Version 2</b>, printed packaging.</figcaption></figure>
 </div>
 
