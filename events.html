@@ -20,7 +20,19 @@
 <link rel="stylesheet" href="css/site.css?v=20261005e">
 <script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.siteReady)document.documentElement.classList.add("no-reveal")},2500)</script>
 <script type="module" src="js/site.js?v=20261005e"></script>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="688c40be-6018-49d1-bb95-970aa23d5b86" data-domains="krisstruble.com"></script>
+<script>/* visit stats (Umami, no cookies). Browsers that look automated are logged as "bot visit", not as page views. */
+(function () {
+  var ua = navigator.userAgent, why = navigator.webdriver ? "automated" : /HeadlessChrome|PhantomJS/.test(ua) ? "headless" : /Windows NT 6\./.test(ua) ? "windows 7/8" : !(screen.width && screen.height) ? "no screen" : "";
+  var s = document.createElement("script");
+  s.defer = true; s.src = "https://cloud.umami.is/script.js";
+  s.dataset.websiteId = "688c40be-6018-49d1-bb95-970aa23d5b86"; s.dataset.domains = "krisstruble.com";
+  if (why) {
+    s.dataset.autoTrack = "false";
+    s.onload = function () { if (window.umami) umami.track("bot visit", { why: why, page: location.pathname }); };
+  }
+  document.head.appendChild(s);
+})();
+</script>
 </head>
 <body class="page-events">
 <a class="skip" href="#main">Skip to content</a>

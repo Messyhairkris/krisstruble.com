@@ -29,7 +29,20 @@ if(location.protocol === 'file:') addEventListener('DOMContentLoaded', function(
   "@sparkjsdev/spark": "../vendor/spark.module.js"
 }}
 </script>
-<script>if(window.top===window){var u=document.createElement("script");u.defer=true;u.src="https://cloud.umami.is/script.js";u.dataset.websiteId="688c40be-6018-49d1-bb95-970aa23d5b86";u.dataset.domains="krisstruble.com";document.head.appendChild(u)}</script>
+<script>/* visit stats (Umami, no cookies). Browsers that look automated are logged as "bot visit", not as page views. */
+(function () {
+  if (window.top !== window) return;
+  var ua = navigator.userAgent, why = navigator.webdriver ? "automated" : /HeadlessChrome|PhantomJS/.test(ua) ? "headless" : /Windows NT 6\./.test(ua) ? "windows 7/8" : !(screen.width && screen.height) ? "no screen" : "";
+  var s = document.createElement("script");
+  s.defer = true; s.src = "https://cloud.umami.is/script.js";
+  s.dataset.websiteId = "688c40be-6018-49d1-bb95-970aa23d5b86"; s.dataset.domains = "krisstruble.com";
+  if (why) {
+    s.dataset.autoTrack = "false";
+    s.onload = function () { if (window.umami) umami.track("bot visit", { why: why, page: location.pathname }); };
+  }
+  document.head.appendChild(s);
+})();
+</script>
 </head>
 <body>
 
