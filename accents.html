@@ -78,15 +78,15 @@
     <h2>The Accent Picker</h2>
     <p>The finished tool uses a caret as a shortcut. Type <span class="mono">^</span> followed by a letter, such
       as <span class="mono">^e</span>, and a small window appears with the available diacritics:</p>
-    <div class="keys" aria-label="Type caret then e, and a window offers é, è, ê, ë and ē">
+    <div class="keys" aria-label="Type caret then e, and a window offers é, è, ê, ë, ē, ė and ę">
       <kbd>^</kbd><kbd>e</kbd><span class="arrow">→</span>
-      <span class="out"><span>é</span><span>è</span><span>ê</span><span>ë</span><span>ē</span></span>
+      <span class="out"><span>é</span><span>è</span><span>ê</span><span>ë</span><span>ē</span><span>ė</span><span>ę</span></span>
     </div>
     <p>You can move through the choices with the keyboard or select one with the button, and then continue
       typing normally.</p>
     <p>Getting that simple interaction to work meant solving a few less-visible problems too. The picker
-      needed to respond only to the intended letters, appear near the cursor, and open on the correct screen
-      when working across multiple monitors.</p>
+      needed to respond only to the intended letters and open centered on the screen you’re working on,
+      even across multiple monitors.</p>
     <p>I compiled the AutoHotkey script into an executable and made an icon so Jasper could install it
       without needing AutoHotkey or the source code.</p>
   </div>
